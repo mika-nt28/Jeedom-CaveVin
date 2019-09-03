@@ -140,16 +140,12 @@ class CaveVin extends eqLogic {
 		}
     	}
   	public function toHtml($_version = 'mobile',$Dialog=true) {
-		$_version = jeedom::versionAlias($_version);
-		$replace = array(
-			'#id#' => $this->getId(),
-			'#name#' => ($this->getIsEnable()) ? $this->getName() : '<del>' . $this->getName() . '</del>',
-			'#eqLink#' => $this->getLinkToConfiguration(),
-			'#background#' => $this->getBackgroundColor($_version),				
-			'#height#' => $this->getDisplay('height', 'auto'),
-			'#width#' => $this->getDisplay('width', '250'),
-			'#dialog#' => $Dialog,
-		);	
+		$replace = $this->preToHtml($_version);
+		if (!is_array($replace)) 
+			return $replace;
+		$version = jeedom::versionAlias($_version);
+		if ($this->getDisplay('hideOn' . $version) == 1)
+			return '';
 		$replace['#Casier#']='';
 		for($heightCase=1;$heightCase<=$this->getConfiguration('heightCase');$heightCase++){
 			$replace['#Casier#'].= '<tr>';
@@ -174,8 +170,8 @@ class CaveVin extends eqLogic {
 			} 	
 			$replace['#'.$cmd->getLogicalId().'#'] = template_replace($replaceCasier,$cmd->toHtml($_version));
 		}
-		return template_replace($replace, getTemplate('core', $_version, 'eqLogic','CaveVin'));
-	}
+		return $this->postToHtml($_version, template_replace($replace, getTemplate('core', $version, 'eqLogic', 'CaveVin')));
+  	}
 	public static function isApogee($vin) {
 		if($vin->getApogee() >= date("Y"))
 			return true;
