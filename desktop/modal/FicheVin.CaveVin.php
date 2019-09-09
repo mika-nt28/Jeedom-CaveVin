@@ -158,9 +158,14 @@ include_file('core', 'mesVin', 'class', 'CaveVin');
 		$('.mesVinAction[data-action=save]').hide();
 	}
 	$('.vinChoix').on('change',function(){
-		getVinInformation($(this).val());
-		$('.mesVinAction[data-action=remove]').show();
-		$('.mesVinAction[data-action=save]').show();
+		if($(this).val() == "new"){
+			getVinInformation('');
+			$('.mesVinAction[data-action=update]').trigger('click');
+		}else{
+			getVinInformation($(this).val());
+			$('.mesVinAction[data-action=remove]').show();
+			$('.mesVinAction[data-action=save]').show();
+		}
 	});
 	$('.mesVinAction[data-action=new]').on('click', function () {
 		getVinInformation('');
