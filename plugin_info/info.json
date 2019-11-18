@@ -10,7 +10,5 @@
 	"mobile" : "panel",
 	"eventjs" : true,
 	"compatibility" : ["miniplus","smart","rpi","docker","diy","mobile"],
-	"issue" : "https://github.com/mika-nt28/Jeedom-CaveVin/issues",
- 	"changelog" : "https://github.com/mika-nt28/Jeedom-CaveVin/commits/stable",
  	"documentation" : "https://mika-nt28.github.io/Jeedom-CaveVin/"
 }
