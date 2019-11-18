@@ -22,7 +22,7 @@
 				<span>{{Configuration}}</span>
 			</div>
 		</div>
-		<legend><i class="fas fa-table"></i> {{Mes casiers a bouteilles}}}</legend>
+		<legend><i class="fas fa-table"></i> {{Mes casiers a bouteilles}}</legend>
 		<input class="form-control" placeholder="{{Rechercher}}" id="in_searchEqlogic" />
 		<div class="eqLogicThumbnailContainer">
 			<?php
