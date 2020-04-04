@@ -10,6 +10,6 @@
 	"mobile" : "panel",
 	"eventjs" : true,
 	"compatibility" : ["miniplus","smart","rpi","docker","diy","mobile","v4"],
- 	"documentation" : "https://mika-nt28.github.io/Documentations/CaveVin/",
-	"changelog" : "https://mika-nt28.github.io/Documentations/CaveVin/changelog"
+ 	"documentation" : "https://mika-nt28.github.io/Documentations/CaveVin/#language#/",
+	"changelog" : "https://mika-nt28.github.io/Documentations/CaveVin/#language#/changelog"
 }
