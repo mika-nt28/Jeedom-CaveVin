@@ -58,7 +58,6 @@ class CaveVin extends eqLogic {
 			$Commande->setSubType("binary");
 			$Commande->setTemplate('dashboard','Bouteille');
 			$Commande->setTemplate('mobile','Bouteille');
-			$Commande->setEventOnly(true);
 			$Commande->setIsVisible(true);
 		}
 		$Commande->setName($Name);
